@@ -1,6 +1,6 @@
 # *(MobiCom'24) Delta: A Cloud-assisted Data Enrichment Framework for On-Device Continual Learning*
 
-Official repository of Delta, an efficient, effective and private data enrichment framework designed for on-device continual learning.
+Welcome to the official repository of Delta, an efficient and effective data enrichment framework designed for on-device continual learning.
 
 ## Table of Contents
 
@@ -10,7 +10,7 @@ Official repository of Delta, an efficient, effective and private data enrichmen
 4. Run Commands
 5. Acknowledgments and Note
 
-## 1. Repo Structure & Decription
+## 1. Repository Structure & Description
 
     ├──root/Experiments/MobiCom24_Delta     # Root path
         ├──Agents                           # Files for different continual learning algorithms
@@ -29,7 +29,9 @@ Official repository of Delta, an efficient, effective and private data enrichmen
             ├──RawData                      # Raw data files and preprocessing scripts
                 ├──cifar-10-C               # CIFAR-10-C dataset
                 ├──har                      # HHAR, UCI, Motion, Shoaib datasets
+                    ├──1.preprocess.py      # Preprocessing script
                 ├──textclassification       # XGLUE dataset
+                    ├──1.preprocess.py      # Preprocessing script
             ├──CloudData                    # Cloud-side data, including public data and directory dataset
                 ├──cifar-10-C               
                 ├──har                      
