@@ -20,7 +20,7 @@ The code repository is currently undergoing active development and updates as we
             ├──fskd.py                      # Few-shot CL with knowledge distillation
             ├──fspr.py                      # Few-shot CL with parameter freezing
             ├──fsro.py                      # Few-shot CL with robust optimization
-            ├──fed_cl.py                    # Federated CL
+            ├──fed_cl.py                    # Federated CL algorithm
             ├──test.py                      # CL with data enrichment algorithms (vanilla, random and delta) 
             ├──delta_class.py               # Implementation of delta operations (device-side softmatching and cloud-side sampling)
         ├──Buffer                           # Files related to buffer management
@@ -29,13 +29,13 @@ The code repository is currently undergoing active development and updates as we
             ├──random_retrieve.py           # Random retrieval methods
             ├──reservoir_update.py          # Random update methods
         ├──Data                             # Files for create the data stream objects of different datasets
-            ├──RawData                      # Raw data files and corresponding preprocessing scripts
+            ├──RawData                      # Raw data files and corresponding preprocessing scripts for each task
                 ├──cifar-10-C               # CIFAR-10-C dataset
                 ├──har                      # HHAR, UCI, Motion, Shoaib datasets
                     ├──1.preprocess.py      # Preprocessing script
                 ├──textclassification       # XGLUE dataset
                     ├──1.preprocess.py      # Preprocessing script
-            ├──CloudData                    # Cloud-side data, including public raw data and processed directory dataset
+            ├──CloudData                    # Cloud-side data for each task, including public raw data and processed directory dataset
                 ├──cifar-10-C               
                 ├──har                      
                 ├──textclassification       
@@ -52,10 +52,10 @@ The code repository is currently undergoing active development and updates as we
             ├──HAR_model.py                 # DCNN model for HAR task (requires pretraining)
             ├──resnet.py                    # ResNet model for image tasks (uses pretrained weights from PyTorch)
             ├──speechmodel.py               # VGG model for audio tasks (uses pretrained weights from PyTorch)
-            ├──pretrain.py                  # Script for pretraining DNN model for HAR task
-        ├──2-cloud_pretrain.py              # Script for cloud-side model pretraining
-        ├──3-cloud_preprocess.py            # Script for cloud-side data processing
-        ├──4-main.py                        # Script for executing on-device continual learning
+            ├──pretrain.py                  # Methods for loading models with pretrained weights
+        ├──2-cloud_pretrain.py              # Cloud-side model pretraining
+        ├──3-cloud_preprocess.py            # Cloud-side data processing
+        ├──4-main.py                        # On-device continual learning with specified configurations
         ├──5-plot.py                        # Script for plotting the experimental results
 
 ## 2. Requirements
@@ -73,7 +73,7 @@ Ensure you have the following dependencies installed:
 
 ## 3. Datasets & Preparation
 
-* All raw data files can be downloaded from [Google Drive](). Alternatively, you can download each dataset from the following sources:
+* All raw data files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/197W-UsmgYEh8Kg5-hmWWxl-nMLqZ1s8j?usp=sharing). Alternatively, you can download each dataset from the following sources:
     - **Image Classification**: [CIFAR-10-C](https://github.com/hendrycks/robustness)
     - **Human Activity Recognition**: [HHAR](https://dl.acm.org/doi/10.1145/2809695.2809718), [UCI](https://www.sciencedirect.com/science/article/abs/pii/S0925231215010930), [Motion](https://dl.acm.org/doi/10.1145/3302505.3310068), [Shoaib](https://www.mdpi.com/1424-8220/14/6/10146)
     - **Text CLassification**: [Microsoft XGLUE](https://microsoft.github.io/XGLUE/)
