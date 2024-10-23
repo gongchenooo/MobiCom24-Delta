@@ -2,7 +2,7 @@
 
 Welcome to the official repository of Delta, an efficient and effective data enrichment framework designed for on-device continual learning.
 
-The repository is in updating ...
+**The repository is still in updating. Sorry for the delay!**
 
 ## Table of Contents
 
@@ -89,4 +89,4 @@ Ensure you have the following dependencies installed:
 
 Our code is built upon the [online-continual-learning](https://github.com/RaptorMai/online-continual-learning) repository. We extend our sincere gratitude to the [author](https://github.com/RaptorMai) for their foundational work.
 
-If you have any problems, feel free to contact [us](gongchen@sjtu.edu.cn).
+If you have any problems, please feel free to contact [us](gongchen@sjtu.edu.cn).
