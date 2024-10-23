@@ -55,6 +55,7 @@ Welcome to the official repository of Delta, an efficient and effective data enr
         ├──2-cloud_pretrain.py              # Script for cloud-side model pretraining
         ├──3-cloud_preprocess.py            # Script for cloud-side data processing
         ├──4-main.py                        # Script for executing on-device continual learning
+        ├──5-plot.py                        # Script for plotting the experimental results
 
 ## 2. Requirements
 
