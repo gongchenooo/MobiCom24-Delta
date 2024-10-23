@@ -2,7 +2,7 @@
 
 Welcome to the official repository of Delta, an efficient and effective data enrichment framework designed for on-device continual learning.
 
-**The repository is still in updating. Sorry for the delay!**
+**The code repository is still in updating ...**
 
 ## Table of Contents
 
