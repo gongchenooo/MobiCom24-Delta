@@ -1,8 +1,8 @@
 # *(MobiCom'24) Delta: A Cloud-assisted Data Enrichment Framework for On-Device Continual Learning*
 
-Welcome to the official repository of Delta, an efficient and effective data enrichment framework designed for on-device continual learning.
+Welcome to the repository of Delta, an efficient and effective data enrichment framework designed for on-device continual learning (CL).
 
-**The code repository is still in updating ...**
+The code repository is currently undergoing active development and updates as we re-organize the code for improved clarity. The final version will be published as soon as possible.
 
 ## Table of Contents
 
@@ -14,31 +14,32 @@ Welcome to the official repository of Delta, an efficient and effective data enr
 
 ## 1. Repository Structure & Description
 
-    ├──root/Experiments/MobiCom24_Delta     # Root path
+    ├──root/Experiments/MobiCom24_Delta     # Root path of the repository
         ├──Agents                           # Files for different continual learning algorithms
             ├──base.py                      # Abstract class for algorithms
             ├──fskd.py                      # Few-shot CL with knowledge distillation
             ├──fspr.py                      # Few-shot CL with parameter freezing
             ├──fsro.py                      # Few-shot CL with robust optimization
+            ├──fed_cl.py                    # Federated CL
             ├──test.py                      # CL with data enrichment algorithms (vanilla, random and delta) 
-            ├──delta_class.py               # Implementation of delta (device-side softmatching and cloud-side sampling)
+            ├──delta_class.py               # Implementation of delta operations (device-side softmatching and cloud-side sampling)
         ├──Buffer                           # Files related to buffer management
             ├──buffer.py                    
             ├──name_match.py                # Name-to-function mappings
             ├──random_retrieve.py           # Random retrieval methods
             ├──reservoir_update.py          # Random update methods
         ├──Data                             # Files for create the data stream objects of different datasets
-            ├──RawData                      # Raw data files and preprocessing scripts
+            ├──RawData                      # Raw data files and corresponding preprocessing scripts
                 ├──cifar-10-C               # CIFAR-10-C dataset
                 ├──har                      # HHAR, UCI, Motion, Shoaib datasets
                     ├──1.preprocess.py      # Preprocessing script
                 ├──textclassification       # XGLUE dataset
                     ├──1.preprocess.py      # Preprocessing script
-            ├──CloudData                    # Cloud-side data, including public data and directory dataset
+            ├──CloudData                    # Cloud-side data, including public raw data and processed directory dataset
                 ├──cifar-10-C               
                 ├──har                      
                 ├──textclassification       
-            ├──cloud.py                     # File for cloud-side operations for generating directory dataset
+            ├──cloud.py                     # File for cloud-side operations to generate directory dataset
             ├──continumm.py                 # Data stream object creation
             ├──name_match.py                # Name-to-function mappings
             ├──utils.py 
@@ -77,17 +78,17 @@ Ensure you have the following dependencies installed:
     - **Human Activity Recognition**: [HHAR](https://dl.acm.org/doi/10.1145/2809695.2809718), [UCI](https://www.sciencedirect.com/science/article/abs/pii/S0925231215010930), [Motion](https://dl.acm.org/doi/10.1145/3302505.3310068), [Shoaib](https://www.mdpi.com/1424-8220/14/6/10146)
     - **Text CLassification**: [Microsoft XGLUE](https://microsoft.github.io/XGLUE/)
     - **Audio Recognition**: [Google Speech Commands](https://arxiv.org/abs/1804.03209)
-
+      
 ## 4. Run Commands
 
 1. **Preprocess Raw Data**: Run `1-preprocess.py` for each dataset repository in `Data/RawData/`.
 2. **Cloud-side Pretraining**: Execute `2-cloud_pretrain.py` to pretrain models on cloud server. Note that ResNet and Transformers can directly load pre-trained weights provided by PyTorch.
 3. **Cloud-side Data Processing**: Run `3-cloud_preprocess.py` to process public data on the cloud server and generate directory weights (cluster centers).
-4. **On-Device Continual Learning**: Use `4-main.py` for each task with specific commands and configurations provided in `Scripts/run_main.sh`.
-5. **Plot Experimental Results**: Run `5-plot.py` to visualize the experimental results.
+4. **On-Device Continual Learning**: Run `4-main.py` for each task with specific commands and configurations provided in `Scripts/run_main.sh`, and save results in `Log/`.
+5. **Plot Experimental Results**: Run `5-plot.py` to output and visualize the experimental results, and save figures in `Figures/`.
 
 ## 5. Acknowledgments and Note
 
-Our code is built upon the [online-continual-learning](https://github.com/RaptorMai/online-continual-learning) repository. We extend our sincere gratitude to the [author](https://github.com/RaptorMai) for their foundational work.
+Our code is built upon the repositories of [online-continual-learning](https://github.com/RaptorMai/online-continual-learning) and [Miro](https://github.com/omnia-unist/Miro). We extend our sincere gratitude to their foundational work.
 
 If you have any problems, please feel free to contact [us](gongchen@sjtu.edu.cn).
