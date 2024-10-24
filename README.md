@@ -2,7 +2,7 @@
 
 Welcome to the repository of Delta, an efficient and effective data enrichment framework designed for on-device continual learning (CL).
 
-The code repository is currently undergoing active development and updates as we re-organize the code for improved clarity. The final version will be published as soon as possible.
+The code repository is currently **undergoing active development and updates** as we are re-organizing the code for improved clarity. 
 
 ## Table of Contents
 
@@ -71,19 +71,25 @@ Ensure you have the following dependencies installed:
 ![](https://img.shields.io/badge/tqdm-4.62.3-blue.svg)
 ![](https://img.shields.io/badge/matplotlib-3.4.3-blue.svg)
 
-## 3. Datasets & Preparation
+## 3. Datasets
 
-* All raw data files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/197W-UsmgYEh8Kg5-hmWWxl-nMLqZ1s8j?usp=sharing). Alternatively, you can download each dataset from the following sources:
-    - **Image Classification**: [CIFAR-10-C](https://github.com/hendrycks/robustness)
-    - **Human Activity Recognition**: [HHAR](https://dl.acm.org/doi/10.1145/2809695.2809718), [UCI](https://www.sciencedirect.com/science/article/abs/pii/S0925231215010930), [Motion](https://dl.acm.org/doi/10.1145/3302505.3310068), [Shoaib](https://www.mdpi.com/1424-8220/14/6/10146)
-    - **Text CLassification**: [Microsoft XGLUE](https://microsoft.github.io/XGLUE/)
-    - **Audio Recognition**: [Google Speech Commands](https://arxiv.org/abs/1804.03209)
-      
+### 3.1 Downloading Raw Data
+
+All raw data files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/197W-UsmgYEh8Kg5-hmWWxl-nMLqZ1s8j?usp=sharing). Alternatively, you can download each dataset from the following sources:
+- **Image Classification**: [CIFAR-10-C](https://github.com/hendrycks/robustness)
+- **Human Activity Recognition**: [HHAR](https://dl.acm.org/doi/10.1145/2809695.2809718), [UCI](https://www.sciencedirect.com/science/article/abs/pii/S0925231215010930), [Motion](https://dl.acm.org/doi/10.1145/3302505.3310068), [Shoaib](https://www.mdpi.com/1424-8220/14/6/10146)
+- **Text CLassification**: [Microsoft XGLUE](https://microsoft.github.io/XGLUE/)
+- **Audio Recognition**: [Google Speech Commands](https://arxiv.org/abs/1804.03209)
+
+### 3.2 Preprocessing Raw Data
+
+### 3.3 Preparing Data for Each Context
+
 ## 4. Run Commands
 
 1. **Preprocess Raw Data**: Run `1-preprocess.py` for each dataset repository in `Data/RawData/`.
-2. **Cloud-side Pretraining**: Execute `2-cloud_pretrain.py` to pretrain models on cloud server. Note that ResNet and Transformers can directly load pre-trained weights provided by PyTorch.
-3. **Cloud-side Data Processing**: Run `3-cloud_preprocess.py` to process public data on the cloud server and generate directory weights (cluster centers).
+2. **Cloud-side Pretraining**: Execute `2-cloud_pretrain.py` to pretrain models on cloud server. (Note that ResNet and Transformers can directly load pre-trained weights provided by PyTorch)
+3. **Cloud-side Data Processing**: Run `3-cloud_preprocess.py` to process public data on the cloud server and generate directory weights/cluster centers.
 4. **On-Device Continual Learning**: Run `4-main.py` for each task with specific commands and configurations provided in `Scripts/run_main.sh`, and save results in `Log/`.
 5. **Plot Experimental Results**: Run `5-plot.py` to output and visualize the experimental results, and save figures in `Figures/`.
 
