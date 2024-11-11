@@ -2,7 +2,7 @@
 
 Welcome to the repository of Delta, an efficient and effective data enrichment framework designed for on-device continual learning (CL).
 
-The code repository is currently **undergoing active development and updates** as we are re-organizing the code for improved clarity. 
+The code repository is currently **undergoing updates** as we are re-organizing the code for improved clarity. 
 
 ## Table of Contents
 
