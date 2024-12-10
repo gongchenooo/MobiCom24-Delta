@@ -97,4 +97,4 @@ All raw data files can be downloaded from [Google Drive](https://drive.google.co
 
 Our code is built upon the repositories of [online-continual-learning](https://github.com/RaptorMai/online-continual-learning) and [Miro](https://github.com/omnia-unist/Miro). We extend our sincere gratitude to their foundational work.
 
-If you have any problems, please feel free to contact [us](gongchen@sjtu.edu.cn).
+If you have any problems, please feel free to contact us (gongchen@sjtu.edu.cn).
